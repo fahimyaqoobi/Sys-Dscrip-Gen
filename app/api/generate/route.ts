@@ -159,6 +159,13 @@ Write the physical description:`;
       }
     }
 
+    if (!descriptionResponse) {
+      return NextResponse.json(
+        { error: 'Failed to generate system description after retries' },
+        { status: 500 }
+      );
+    }
+
     const descriptionData = await descriptionResponse.json();
     let generatedDescription = descriptionData.choices?.[0]?.message?.content?.trim() || "Description generation failed.";
 
@@ -244,6 +251,13 @@ Write ONLY the assessment text:`;
         console.error("Fetch Error (Condition):", fetchError);
         return NextResponse.json({ error: "Network error connecting to AI provider" }, { status: 500 });
       }
+    }
+
+    if (!response) {
+      return NextResponse.json(
+        { error: 'Failed to generate condition assessment after retries' },
+        { status: 500 }
+      );
     }
 
     const data = await response.json();
