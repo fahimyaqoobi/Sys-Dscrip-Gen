@@ -87,7 +87,7 @@ export default function Home() {
             Systems Description Generator
           </h1>
           <p className="text-lg text-slate-400 font-light">
-            AI-Powered Forensic Assessment Tool
+            AI-Powered Assessment Tool
           </p>
         </div>
 
@@ -225,7 +225,7 @@ export default function Home() {
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-slate-700/50 flex flex-col">
             <h2 className="text-xl font-semibold text-emerald-400 mb-6 flex items-center gap-2">
               <span className="text-2xl">📄</span>
-              Forensic Output
+              Output
             </h2>
 
             {generatedOutput ? (
